@@ -22,9 +22,6 @@ import './scripts/history.js';
 import { defineCustomElements as ionicElements } from '@ionic/core/loader';
 ionicElements(window);
 
-import { defineCustomElements as ioniconsElements } from 'ionicons/dist/loader';
-ioniconsElements(window);
-
 // Init DeckDeckGo elements
 import { defineCustomElements as deckDeckGoElements } from '@deckdeckgo/core/dist/loader';
 import { defineCustomElements as deckDeckGoRemoteElements } from '@deckdeckgo/remote/dist/loader';

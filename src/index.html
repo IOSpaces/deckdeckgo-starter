@@ -171,7 +171,7 @@
 
             <!-- END: Edit your slides -->
 
-            <a href="#" onclick="openMenu(event)" slot="actions" style="color: inherit;"><ion-icon name="more"></ion-icon></a>
+            <a href="#" onclick="openMenu($event)" slot="actions" style="color: inherit;"><ion-icon src="/assets/icons/ionicons/more.svg" ariaLabel="More options"></ion-icon></a>
 
         </deckgo-deck>
 
@@ -181,18 +181,18 @@
 
     <ion-fab vertical="bottom" horizontal="end" slot="fixed" id="navigation">
         <ion-fab-button>
-            <ion-icon name="apps"></ion-icon>
+            <ion-icon src="/assets/icons/ionicons/apps.svg" ariaLabel="Show list of actions"></ion-icon>
         </ion-fab-button>
         <ion-fab-list side="start">
-            <ion-fab-button class="hide-on-mobile" color="primary" onclick="toggleFullScreen()"><ion-icon name="expand"></ion-icon></ion-fab-button>
-            <ion-fab-button color="primary" onclick="presentSlidePicker()"><ion-icon src="/assets/icons/chapters.svg"></ion-icon></ion-fab-button>
-            <ion-fab-button color="primary" onclick="nextSlide()"><ion-icon name="arrow-forward"></ion-icon></ion-fab-button>
-            <ion-fab-button color="primary" onclick="previousSlide()"><ion-icon name="arrow-back"></ion-icon></ion-fab-button>
+            <ion-fab-button class="hide-on-mobile" color="primary" onclick="toggleFullScreen()"><ion-icon src="/assets/icons/ionicons/expand.svg" ariaLabel="Full screen"></ion-icon></ion-fab-button>
+            <ion-fab-button color="primary" onclick="presentSlidePicker()"><ion-icon src="/assets/icons/chapters.svg" ariaLabel="Jump to a particular slide"></ion-icon></ion-fab-button>
+            <ion-fab-button color="primary" onclick="nextSlide()"><ion-icon src="/assets/icons/ionicons/arrow-forward.svg" ariaLabel="Next slide"></ion-icon></ion-fab-button>
+            <ion-fab-button color="primary" onclick="previousSlide()"><ion-icon src="/assets/icons/ionicons/arrow-back.svg" ariaLabel="Previous slide"></ion-icon></ion-fab-button>
         </ion-fab-list>
         <ion-fab-list side="top">
-            <ion-fab-button id="buttonSlideNotes" color="primary" onclick="displaySlideNotes()"><ion-icon name="clipboard"></ion-icon></ion-fab-button>
-            <ion-fab-button class="hide-on-mobile" color="primary" onclick="doPrint()"><ion-icon name="print"></ion-icon></ion-fab-button>
-            <ion-fab-button color="primary" onclick="reconnectRemoteControl()"><ion-icon name="link"></ion-icon></ion-fab-button>
+            <ion-fab-button id="buttonSlideNotes" color="primary" onclick="displaySlideNotes()"><ion-icon src="/assets/icons/ionicons/clipboard.svg" ariaLabel="Display slide notes"></ion-icon></ion-fab-button>
+            <ion-fab-button class="hide-on-mobile" color="primary" onclick="doPrint()"><ion-icon src="/assets/icons/ionicons/print.svg" ariaLabel="Print presentation"></ion-icon></ion-fab-button>
+            <ion-fab-button color="primary" onclick="reconnectRemoteControl()"><ion-icon src="/assets/icons/ionicons/link.svg" ariaLabel="Sync again the remote control"></ion-icon></ion-fab-button>
         </ion-fab-list>
     </ion-fab>
 
