@@ -38,5 +38,7 @@ function initSreenshot() {
                 }
             }
         }
+
+        resolve();
     });
 }
