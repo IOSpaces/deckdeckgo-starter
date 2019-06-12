@@ -23,12 +23,12 @@
     <meta property="og:image:type" content="image/png">
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{DECKDECKGO_BASE_HREF}}assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{DECKDECKGO_BASE_HREF}}assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{DECKDECKGO_BASE_HREF}}assets/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="{{DECKDECKGO_BASE_HREF}}assets/favicon/favicon.ico">
     <meta name="msapplication-TileColor" content="{{DECKDECKGO_COLOR}}">
-    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="msapplication-config" content="{{DECKDECKGO_BASE_HREF}}assets/favicon/browserconfig.xml">
     <meta name="theme-color" content="{{DECKDECKGO_COLOR}}">
 
     <script>
@@ -81,7 +81,7 @@
 
         <deckgo-deck id="slider">
 
-            <a href="#" onclick="openMenu(event)" slot="actions" style="color: inherit;"><ion-icon src="/assets/icons/ionicons/more.svg" ariaLabel="More options"></ion-icon></a>
+            <a href="#" onclick="openMenu(event)" slot="actions" style="color: inherit;"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/more.svg" ariaLabel="More options"></ion-icon></a>
 
         </deckgo-deck>
 
@@ -91,18 +91,18 @@
 
     <ion-fab vertical="bottom" horizontal="end" slot="fixed" id="navigation">
         <ion-fab-button>
-            <ion-icon src="/assets/icons/ionicons/apps.svg" ariaLabel="Show list of actions"></ion-icon>
+            <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/apps.svg" ariaLabel="Show list of actions"></ion-icon>
         </ion-fab-button>
         <ion-fab-list side="start">
-            <ion-fab-button class="hide-on-mobile" color="primary" onclick="toggleFullScreen()"><ion-icon src="/assets/icons/ionicons/expand.svg" ariaLabel="Full screen"></ion-icon></ion-fab-button>
-            <ion-fab-button color="primary" onclick="presentSlidePicker()"><ion-icon src="/assets/icons/chapters.svg" ariaLabel="Jump to a particular slide"></ion-icon></ion-fab-button>
-            <ion-fab-button color="primary" onclick="nextSlide()"><ion-icon src="/assets/icons/ionicons/arrow-forward.svg" ariaLabel="Next slide"></ion-icon></ion-fab-button>
-            <ion-fab-button color="primary" onclick="previousSlide()"><ion-icon src="/assets/icons/ionicons/arrow-back.svg" ariaLabel="Previous slide"></ion-icon></ion-fab-button>
+            <ion-fab-button class="hide-on-mobile" color="primary" onclick="toggleFullScreen()"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/expand.svg" ariaLabel="Full screen"></ion-icon></ion-fab-button>
+            <ion-fab-button color="primary" onclick="presentSlidePicker()"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/chapters.svg" ariaLabel="Jump to a particular slide"></ion-icon></ion-fab-button>
+            <ion-fab-button color="primary" onclick="nextSlide()"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/arrow-forward.svg" ariaLabel="Next slide"></ion-icon></ion-fab-button>
+            <ion-fab-button color="primary" onclick="previousSlide()"><ion-icon src="/{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/arrow-back.svg" ariaLabel="Previous slide"></ion-icon></ion-fab-button>
         </ion-fab-list>
         <ion-fab-list side="top">
-            <ion-fab-button id="buttonSlideNotes" color="primary" onclick="displaySlideNotes()"><ion-icon src="/assets/icons/ionicons/clipboard.svg" ariaLabel="Display slide notes"></ion-icon></ion-fab-button>
-            <ion-fab-button class="hide-on-mobile" color="primary" onclick="doPrint()"><ion-icon src="/assets/icons/ionicons/print.svg" ariaLabel="Print presentation"></ion-icon></ion-fab-button>
-            <ion-fab-button color="primary" onclick="displayRemoteControl()"><ion-icon src="/assets/icons/ionicons/phone-portrait.svg" ariaLabel="Sync again the remote control"></ion-icon></ion-fab-button>
+            <ion-fab-button id="buttonSlideNotes" color="primary" onclick="displaySlideNotes()"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/clipboard.svg" ariaLabel="Display slide notes"></ion-icon></ion-fab-button>
+            <ion-fab-button class="hide-on-mobile" color="primary" onclick="doPrint()"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/print.svg" ariaLabel="Print presentation"></ion-icon></ion-fab-button>
+            <ion-fab-button color="primary" onclick="displayRemoteControl()"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/phone-portrait.svg" ariaLabel="Sync again the remote control"></ion-icon></ion-fab-button>
         </ion-fab-list>
     </ion-fab>
 
@@ -112,10 +112,10 @@
     <ion-alert-controller></ion-alert-controller>
 
     <web-social-share show="false" style="--web-social-share-backdrop-opacity: 0.5;">
-        <ion-icon src="/assets/icons/ionicons/twitter.svg" ariaLabel="Twitter" slot="twitter" style="color: #00aced; width: 1.4rem; height: 1.4rem;"></ion-icon>
-        <ion-icon src="/assets/icons/ionicons/linkedin.svg" ariaLabel="Linkedin" slot="linkedin" style="color: #0077b5; width: 1.4rem; height: 1.4rem;"></ion-icon>
-        <ion-icon src="/assets/icons/ionicons/mail.svg" ariaLabel="Email" slot="email" style="color: #ff8ea3; width: 1.4rem; height: 1.4rem;"></ion-icon>
-        <ion-icon src="/assets/icons/ionicons/whatsapp.svg" ariaLabel="WhatsApp" slot="whatsapp" style="color: #25D366; width: 1.4rem; height: 1.4rem;"></ion-icon>
+        <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/twitter.svg" ariaLabel="Twitter" slot="twitter" style="color: #00aced; width: 1.4rem; height: 1.4rem;"></ion-icon>
+        <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/linkedin.svg" ariaLabel="Linkedin" slot="linkedin" style="color: #0077b5; width: 1.4rem; height: 1.4rem;"></ion-icon>
+        <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/mail.svg" ariaLabel="Email" slot="email" style="color: #ff8ea3; width: 1.4rem; height: 1.4rem;"></ion-icon>
+        <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/whatsapp.svg" ariaLabel="WhatsApp" slot="whatsapp" style="color: #25D366; width: 1.4rem; height: 1.4rem;"></ion-icon>
     </web-social-share>
 </ion-app>
 
