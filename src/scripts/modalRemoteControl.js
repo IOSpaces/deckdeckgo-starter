@@ -10,7 +10,7 @@ displayRemoteControl = async () => {
     <ion-toolbar color="tertiary">
       <ion-buttons slot="start">
           <ion-button>
-              <ion-icon src="/assets/icons/ionicons/close.svg" ariaLabel="Close"></ion-icon>
+              <ion-icon src="https://deckdeckgo.com/assets/icons/ionicons/close.svg" ariaLabel="Close"></ion-icon>
           </ion-button>
       </ion-buttons>
       <ion-title>Remote control</ion-title>
@@ -83,7 +83,7 @@ function getRemoteControlModalContent() {
 
     <div class="qrcode-container" style="display: flex; justify-content: center;  --deckgo-qrcode-size: 300px; --deckgo-qrcode-color-fill: var(--ion-color-tertiary);">
         <deckgo-qrcode content="${qrCodeLink}">
-            <ion-icon slot="logo" src="/assets/icons/deckdeckgo.svg"></ion-icon>
+            <ion-icon slot="logo" src="https://deckdeckgo.com/assets/icons/deckdeckgo.svg"></ion-icon>
         </deckgo-qrcode>
     </div>`;
     }
