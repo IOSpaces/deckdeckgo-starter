@@ -55,6 +55,12 @@
             --ion-background-color: #ffffff;
         }
 
+        deckgo-deck {
+            color: black;
+            --color: black;
+            --ion-text-color: black;
+        }
+
         /* Until Web Components are loaded, don't display content */
         body {
             background: #ffffff;
@@ -80,6 +86,10 @@
     <ion-content force-overscroll="false" scroll-y="false">
 
         <deckgo-deck id="slider">
+
+            <deckgo-slide-title>
+                <h2 slot="title">hello</h2>
+            </deckgo-slide-title>
 
             <a href="#" onclick="openMenu(event)" slot="actions" style="color: inherit;"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/more.svg" ariaLabel="More options"></ion-icon></a>
 
