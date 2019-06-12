@@ -17,7 +17,7 @@
     <meta property="og:description" content="{{DECKDECKGO_DESCRIPTION}}">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://deckdeckgo.com">
+    <meta property="og:url" content="{{DECKDECKGO_URL}}">
 
     <meta property="og:image" content="https://deckdeckgo.com/assets/img/deckdeckgo.png">
     <meta property="og:image:type" content="image/png">
@@ -27,9 +27,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
     <link rel="shortcut icon" href="assets/favicon/favicon.ico">
-    <meta name="msapplication-TileColor" content="#3880ff">
+    <meta name="msapplication-TileColor" content="{{DECKDECKGO_COLOR}}">
     <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
-    <meta name="theme-color" content="#3880ff">
+    <meta name="theme-color" content="{{DECKDECKGO_COLOR}}">
 
     <script>
         if ('serviceWorker' in navigator) {
@@ -50,9 +50,14 @@
     <meta name="msapplication-tap-highlight" content="no">
 
     <style>
+        :root {
+            background: {{DECKDECKGO_COLOR}};
+            --ion-background-color: {{DECKDECKGO_COLOR}};
+        }
+
         /* Until Web Components are loaded, don't display content */
         body {
-            background: #3880ff;
+            background: {{DECKDECKGO_COLOR}};
         }
 
         ion-app.loading, ion-app.loading a {
@@ -73,11 +78,10 @@
 
 <ion-app class="loading">
     <ion-content force-overscroll="false" scroll-y="false">
+
         <deckgo-deck id="slider" pager-percentage="false">
 
-            <!-- BEGIN: Edit your slides -->
-
-            <!-- END: Edit your slides -->
+            {{DECKDECKGO_SLIDES}}
 
             <a href="#" onclick="openMenu(event)" slot="actions" style="color: inherit;"><ion-icon src="/assets/icons/ionicons/more.svg" ariaLabel="More options"></ion-icon></a>
 
