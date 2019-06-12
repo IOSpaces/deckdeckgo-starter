@@ -15,9 +15,9 @@ buildMenuListActions = () => {
     return new Promise(async (resolve) => {
         let result = '';
 
-        result += '<ion-item ion-item button onclick="howItWorks()" style="--border-style: none;"><ion-icon src="https://deckdeckgo.com/assets/icons/ionicons/help.svg" ariaLabel="How it works" slot="end"></ion-icon><ion-label>How it works</ion-label></ion-item>';
-        result += '<ion-item ion-item button onclick="openShare()" style="--border-style: none;"><ion-icon src="https://deckdeckgo.com/assets/icons/ionicons/share.svg" ariaLabel="Share this presentation" slot="end"></ion-icon><ion-label>Share</ion-label></ion-item>';
-        result += '<ion-item ion-item button onclick="openLink(\'https://deckdeckgo.com\')" style="--border-style: none;"><ion-icon src="https://deckdeckgo.com/assets/icons/deckdeckgo.svg" ariaLabel="DeckDeckGo" slot="end"></ion-icon><ion-label>Created with DeckDeckGo</ion-label></ion-item>';
+        result += '<ion-item ion-item button onclick="howItWorks()" style="--border-style: none;"><ion-icon src="https://raw.githubusercontent.com/deckgo/deckdeckgo-website/master/src/assets/icons/ionicons/help.svg" ariaLabel="How it works" slot="end"></ion-icon><ion-label>How it works</ion-label></ion-item>';
+        result += '<ion-item ion-item button onclick="openShare()" style="--border-style: none;"><ion-icon src="https://raw.githubusercontent.com/deckgo/deckdeckgo-website/master/src/assets/icons/ionicons/share.svg" ariaLabel="Share this presentation" slot="end"></ion-icon><ion-label>Share</ion-label></ion-item>';
+        result += '<ion-item ion-item button onclick="openLink(\'https://deckdeckgo.com\')" style="--border-style: none;"><ion-icon src=https://raw.githubusercontent.com/deckgo/deckdeckgo-website/master/src/assets/icons/deckdeckgo.svg" ariaLabel="DeckDeckGo" slot="end"></ion-icon><ion-label>Created with DeckDeckGo</ion-label></ion-item>';
 
         resolve(result);
     });
