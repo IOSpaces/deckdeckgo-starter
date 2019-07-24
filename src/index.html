@@ -96,20 +96,10 @@
     </ion-content>
 
     <ion-fab vertical="bottom" horizontal="end" slot="fixed" id="navigation">
-        <ion-fab-button>
-            <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/apps.svg" ariaLabel="Show list of actions"></ion-icon>
-        </ion-fab-button>
-        <ion-fab-list side="start">
-            <ion-fab-button class="hide-on-mobile" color="primary" onclick="toggleFullScreen()"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/expand.svg" ariaLabel="Full screen"></ion-icon></ion-fab-button>
-            <ion-fab-button color="primary" onclick="presentSlidePicker()"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/list.svg" ariaLabel="Jump to a particular slide"></ion-icon></ion-fab-button>
-            <ion-fab-button color="primary" onclick="nextSlide()"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/arrow-forward.svg" ariaLabel="Next slide"></ion-icon></ion-fab-button>
-            <ion-fab-button color="primary" onclick="previousSlide()"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/arrow-back.svg" ariaLabel="Previous slide"></ion-icon></ion-fab-button>
-        </ion-fab-list>
-        <ion-fab-list side="top">
-            <ion-fab-button id="buttonSlideNotes" color="primary" onclick="displaySlideNotes()"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/clipboard.svg" ariaLabel="Display slide notes"></ion-icon></ion-fab-button>
-            <ion-fab-button class="hide-on-mobile" color="primary" onclick="doPrint()"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/print.svg" ariaLabel="Print presentation"></ion-icon></ion-fab-button>
-            <ion-fab-button color="primary" onclick="displayRemoteControl()"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/phone-portrait.svg" ariaLabel="Sync again the remote control"></ion-icon></ion-fab-button>
-        </ion-fab-list>
+        <ion-fab-button color="primary" size="small" onclick="previousSlide()"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/arrow-back.svg" ariaLabel="Previous slide"></ion-icon></ion-fab-button>
+        <ion-fab-button color="primary" size="small" onclick="nextSlide()"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/arrow-forward.svg" ariaLabel="Next slide"></ion-icon></ion-fab-button>
+        <ion-fab-button color="primary" size="small" onclick="presentSlidePicker()"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/list.svg" ariaLabel="Jump to a particular slide"></ion-icon></ion-fab-button>
+        <ion-fab-button class="hide-on-mobile" size="small" color="primary" onclick="toggleFullScreen()"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/expand.svg" ariaLabel="Full screen"></ion-icon></ion-fab-button>
     </ion-fab>
 
     <!-- Ionic components anchors -->
