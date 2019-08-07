@@ -15,10 +15,10 @@ buildMenuListActions = () => {
     return new Promise(async (resolve) => {
         let result = '';
 
-        result += '<ion-item ion-item button detail="false" onclick="displaySlideNotes()" color="primary" style="--border-style: none;"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/clipboard.svg" ariaLabel="Display slide notes" slot="end"></ion-icon><ion-label>Display slide notes</ion-label></ion-item>';
-        result += '<ion-item ion-item button detail="false" onclick="displayRemoteControl()" color="primary" style="--border-style: none;"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/phone-portrait.svg" ariaLabel="Remote control" slot="end"></ion-icon><ion-label>Remote control</ion-label></ion-item>';
-        result += '<ion-item ion-item button detail="false" onclick="openShare()" color="primary" style="--border-style: none;"><ion-icon name="share" ariaLabel="Share this presentation" slot="end"></ion-icon><ion-label>Share</ion-label></ion-item>';
-        result += '<ion-item ion-item button detail="false" onclick="openLink(\'https://deckdeckgo.com\')" style="--border-style: none; --ion-item-background: white;"><ion-icon src="/assets/icons/deckdeckgo.svg" ariaLabel="DeckDeckGo" slot="end"></ion-icon><ion-label>Created with DeckDeckGo</ion-label></ion-item>';
+        result += '<ion-item ion-item button detail="false" onclick="displaySlideNotes()" color="primary" style="--border-style: none;"><ion-icon src="https://deckdeckgo.com/assets/icons/ionicons/clipboard.svg" ariaLabel="Display slide notes" slot="end"></ion-icon><ion-label>Display slide notes</ion-label></ion-item>';
+        result += '<ion-item ion-item button detail="false" onclick="displayRemoteControl()" color="primary" style="--border-style: none;"><ion-icon src="https://deckdeckgo.com/assets/icons/ionicons/phone-portrait.svg" ariaLabel="Remote control" slot="end"></ion-icon><ion-label>Remote control</ion-label></ion-item>';
+        result += '<ion-item ion-item button detail="false" onclick="openShare()" color="primary" style="--border-style: none;"><ion-icon src="https://deckdeckgo.com/assets/icons/ionicons/share.svg" ariaLabel="Share this presentation" slot="end"></ion-icon><ion-label>Share</ion-label></ion-item>';
+        result += '<ion-item ion-item button detail="false" onclick="openLink(\'https://deckdeckgo.com\')" style="--border-style: none; --ion-item-background: white;"><ion-icon src="https://deckdeckgo.com/assets/icons/deckdeckgo.svg" ariaLabel="DeckDeckGo" slot="end"></ion-icon><ion-label>Created with DeckDeckGo</ion-label></ion-item>';
 
         resolve(result);
     });
