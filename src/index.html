@@ -96,10 +96,25 @@
     </ion-content>
 
     <ion-fab vertical="bottom" horizontal="end" slot="fixed" id="navigation">
-        <ion-fab-button color="primary" size="small" onclick="previousSlide()"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/arrow-back.svg" ariaLabel="Previous slide"></ion-icon></ion-fab-button>
-        <ion-fab-button color="primary" size="small" onclick="nextSlide()"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/arrow-forward.svg" ariaLabel="Next slide"></ion-icon></ion-fab-button>
-        <ion-fab-button color="primary" size="small" onclick="presentSlidePicker()"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/list.svg" ariaLabel="Jump to a particular slide"></ion-icon></ion-fab-button>
-        <ion-fab-button class="hide-on-mobile" size="small" color="primary" onclick="toggleFullScreen()"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/expand.svg" ariaLabel="Full screen"></ion-icon></ion-fab-button>
+        <button onclick="previousSlide()" class="navigation ion-activatable">
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/arrow-back.svg" ariaLabel="Previous slide" style="font-size: 1.4em;"></ion-icon>
+        </button>
+
+        <button onclick="nextSlide()" class="navigation ion-activatable">
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/arrow-forward.svg" ariaLabel="Next slide" style="font-size: 1.4em;"></ion-icon>
+        </button>
+
+        <button onclick="presentSlidePicker()" class="navigation ion-activatable">
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/list.svg" ariaLabel="Jump to a particular slide" style="font-size: 1.4em;"></ion-icon>
+        </button>
+
+        <button onclick="toggleFullScreen()" class="navigation ion-activatable hide-on-mobile">
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/expand.svg" ariaLabel="Full screen" style="font-size: 1.4em;"></ion-icon>
+        </button>
     </ion-fab>
 
     <!-- Ionic components anchors -->
