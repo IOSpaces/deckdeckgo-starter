@@ -37,13 +37,9 @@ import { defineCustomElements as deckDeckGoElements } from '@deckdeckgo/core/dis
 import {defineCustomElements as deckDeckGoSlideTitleElements } from '@deckdeckgo/slide-title/dist/loader';
 import {defineCustomElements as deckDeckGoSlideContentElements } from '@deckdeckgo/slide-content/dist/loader';
 import {defineCustomElements as deckDeckGoSlideAuthorElements } from '@deckdeckgo/slide-author/dist/loader';
-import {defineCustomElements as deckDeckGoSlideChartElements } from '@deckdeckgo/slide-chart/dist/loader';
 import {defineCustomElements as deckDeckGoSlideYoutubeElements } from '@deckdeckgo/slide-youtube/dist/loader';
 import {defineCustomElements as deckDeckGoSlideSplitElements } from '@deckdeckgo/slide-split/dist/loader';
-import {defineCustomElements as deckDeckGoSlideCodeElements } from '@deckdeckgo/slide-code/dist/loader';
-import {defineCustomElements as deckDeckGoSlideCountdownElements } from '@deckdeckgo/slide-countdown/dist/loader';
 import {defineCustomElements as deckDeckGoSlideGifElements } from '@deckdeckgo/slide-gif/dist/loader';
-import {defineCustomElements as deckDeckGoSlideQRCodeElements } from '@deckdeckgo/slide-qrcode/dist/loader';
 
 import { defineCustomElements as deckDeckGoRemoteElements } from '@deckdeckgo/remote/dist/loader';
 import { defineCustomElements as deckDeckGoChartsElements } from '@deckdeckgo/charts/dist/loader';
@@ -65,13 +61,9 @@ deckDeckGoElements(window).then(async () => {
     promises.push(deckDeckGoSlideTitleElements(window));
     promises.push(deckDeckGoSlideContentElements(window));
     promises.push(deckDeckGoSlideAuthorElements(window));
-    promises.push(deckDeckGoSlideChartElements(window));
     promises.push(deckDeckGoSlideYoutubeElements(window));
     promises.push(deckDeckGoSlideSplitElements(window));
-    promises.push(deckDeckGoSlideCodeElements(window));
-    promises.push(deckDeckGoSlideCountdownElements(window));
     promises.push(deckDeckGoSlideGifElements(window));
-    promises.push(deckDeckGoSlideQRCodeElements(window));
 
     await Promise.all(promises);
 
