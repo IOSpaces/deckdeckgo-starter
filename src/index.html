@@ -87,7 +87,7 @@
 
         <deckgo-deck id="slider">
 
-            <a href="#" onclick="openMenu(event)" slot="actions" style="color: inherit;"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/more.svg" ariaLabel="More options"></ion-icon></a>
+            <a href="#" onclick="openMenu(event)" slot="actions" style="color: inherit;"><ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/more.svg" aria-label="More options"></ion-icon></a>
 
         </deckgo-deck>
 
@@ -96,24 +96,24 @@
     </ion-content>
 
     <ion-fab vertical="bottom" horizontal="end" slot="fixed" id="navigation">
-        <button onclick="previousSlide()" class="navigation ion-activatable">
+        <button onclick="previousSlide()" class="navigation ion-activatable" aria-label="Previous slide">
             <ion-ripple-effect></ion-ripple-effect>
-            <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/arrow-back.svg" ariaLabel="Previous slide" style="font-size: 1.4em;"></ion-icon>
+            <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/arrow-back.svg" aria-label="Previous slide" style="font-size: 1.4em;"></ion-icon>
         </button>
 
-        <button onclick="nextSlide()" class="navigation ion-activatable">
+        <button onclick="nextSlide()" class="navigation ion-activatable" aria-label="Next slide">
             <ion-ripple-effect></ion-ripple-effect>
-            <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/arrow-forward.svg" ariaLabel="Next slide" style="font-size: 1.4em;"></ion-icon>
+            <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/arrow-forward.svg" aria-label="Next slide" style="font-size: 1.4em;"></ion-icon>
         </button>
 
-        <button onclick="presentSlidePicker()" class="navigation ion-activatable">
+        <button onclick="presentSlidePicker()" class="navigation ion-activatable" aria-label="Jump to a particular slide">
             <ion-ripple-effect></ion-ripple-effect>
-            <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/list.svg" ariaLabel="Jump to a particular slide" style="font-size: 1.4em;"></ion-icon>
+            <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/list.svg" aria-label="Jump to a particular slide" style="font-size: 1.4em;"></ion-icon>
         </button>
 
-        <button onclick="toggleFullScreen()" class="navigation ion-activatable hide-on-mobile">
+        <button onclick="toggleFullScreen()" class="navigation ion-activatable hide-on-mobile" aria-label="Full screen">
             <ion-ripple-effect></ion-ripple-effect>
-            <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/expand.svg" ariaLabel="Full screen" style="font-size: 1.4em;"></ion-icon>
+            <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/expand.svg" aria-label="Full screen" style="font-size: 1.4em;"></ion-icon>
         </button>
     </ion-fab>
 
@@ -123,10 +123,10 @@
     <ion-alert-controller></ion-alert-controller>
 
     <web-social-share show="false" style="--web-social-share-backdrop-opacity: 0.5;">
-        <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/twitter.svg" ariaLabel="Twitter" slot="twitter" style="color: #00aced; font-size: 1.6rem; display: block;"></ion-icon>
-        <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/linkedin.svg" ariaLabel="Linkedin" slot="linkedin" style="color: #0077b5; font-size: 1.6rem; display: block;"></ion-icon>
-        <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/mail.svg" ariaLabel="Email" slot="email" style="color: #ff8ea3; font-size: 1.6rem; display: block;"></ion-icon>
-        <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/whatsapp.svg" ariaLabel="WhatsApp" slot="whatsapp" style="color: #25D366; font-size: 1.6rem; display: block;"></ion-icon>
+        <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/twitter.svg" aria-label="Twitter" slot="twitter" style="color: #00aced; font-size: 1.6rem; display: block;"></ion-icon>
+        <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/linkedin.svg" aria-label="Linkedin" slot="linkedin" style="color: #0077b5; font-size: 1.6rem; display: block;"></ion-icon>
+        <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/mail.svg" aria-label="Email" slot="email" style="color: #ff8ea3; font-size: 1.6rem; display: block;"></ion-icon>
+        <ion-icon src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/whatsapp.svg" aria-label="WhatsApp" slot="whatsapp" style="color: #25D366; font-size: 1.6rem; display: block;"></ion-icon>
     </web-social-share>
 </ion-app>
 

@@ -10,7 +10,7 @@ displayRemoteControl = async () => {
     <ion-toolbar color="tertiary">
       <ion-buttons slot="start">
           <ion-button>
-              <ion-icon src="https://deckdeckgo.com/assets/icons/ionicons/close.svg" ariaLabel="Close"></ion-icon>
+              <ion-icon src="https://deckdeckgo.com/assets/icons/ionicons/close.svg" aria-label="Close"></ion-icon>
           </ion-button>
       </ion-buttons>
       <ion-title>Remote control</ion-title>
