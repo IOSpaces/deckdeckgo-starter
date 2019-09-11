@@ -44,6 +44,7 @@ import {defineCustomElements as deckDeckGoSlideSplitElements } from '@deckdeckgo
 import {defineCustomElements as deckDeckGoSlideGifElements } from '@deckdeckgo/slide-gif/dist/loader';
 
 import { defineCustomElements as deckDeckGoRemoteElements } from '@deckdeckgo/remote/dist/loader';
+import { defineCustomElements as deckDeckGoQRCodeElements } from '@deckdeckgo/qrcode/dist/loader';
 import { defineCustomElements as deckDeckGoHighlightCodeElements } from '@deckdeckgo/highlight-code/dist/loader';
 import { defineCustomElements as deckDeckGoLazyImgElements } from '@deckdeckgo/lazy-img/dist/loader';
 
@@ -51,6 +52,7 @@ import { defineCustomElements as deckDeckGoLazyImgElements } from '@deckdeckgo/l
 import { defineCustomElements as webSocialShareElements } from 'web-social-share/dist/loader';
 
 deckDeckGoElements(window).then(async () => {
+    await deckDeckGoQRCodeElements(window);
     await deckDeckGoHighlightCodeElements(window);
     await deckDeckGoLazyImgElements(window);
 
