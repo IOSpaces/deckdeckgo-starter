@@ -94,12 +94,6 @@ function shareDesktop() {
                     socialSharePopupHeight: 400
                 }
             },{
-                reddit: {
-                    socialShareUrl: shareUrl,
-                    socialSharePopupWidth: 300,
-                    socialSharePopupHeight: 500
-                }
-            },{
                 linkedin: {
                     socialShareUrl: shareUrl
                 }
