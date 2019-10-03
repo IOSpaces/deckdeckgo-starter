@@ -88,6 +88,8 @@ module.exports = (env, argv) => {
         processEnv['process.env']['NO_REMOTE'] = true;
     }
 
+    processEnv['process.env']['KEEP_HISTORY'] = argv.mode === 'development' || argv.mode === 'local';
+
     plugins.push(
         new webpack.DefinePlugin(processEnv)
     );
