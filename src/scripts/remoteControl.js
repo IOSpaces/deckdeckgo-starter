@@ -17,12 +17,10 @@ remoteEvent = async (event) => {
         if (type === 'next_slide') {
             const slideAnimation = event.detail.slideAnimation;
             await slider.slideNext(slideAnimation, slideAnimation);
-            await pushStateSlideIndex(slider);
             await initActionPlayPause(slider);
         } else if (type === 'prev_slide') {
             const slideAnimation = event.detail.slideAnimation;
             await slider.slidePrev(slideAnimation, slideAnimation);
-            await pushStateSlideIndex(slider);
             await initActionPlayPause(slider);
         } else if (type === 'slide_action') {
             await slidePlayPause(event);
@@ -30,7 +28,6 @@ remoteEvent = async (event) => {
             const index = event.detail.index;
             if (index >= 0) {
                 await slider.slideTo(index, 0);
-                await pushStateSlideIndex(slider);
                 await initActionPlayPause(slider);
             }
         }

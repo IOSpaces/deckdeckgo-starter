@@ -23,7 +23,6 @@ import './scripts/modalRemoteControl.js';
 import './scripts/remoteControl.js';
 import './scripts/actions.js';
 import './scripts/menu.js';
-import './scripts/history.js';
 import './scripts/fullscreen.js';
 import './scripts/resize.js';
 import './scripts/actionPlayPause.js';
@@ -68,9 +67,6 @@ deckDeckGoElements(window).then(async () => {
     await postLoading();
     await initActions();
     await initFullscreen();
-
-    await postLoadingJumpTo();
-    await initDeckHistoryWatch();
 
     await webSocialShareElements(window);
 
