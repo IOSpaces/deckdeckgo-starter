@@ -1,9 +1,6 @@
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-
-const {DeckDeckGoInfoPlugin, DeckDeckGoRemoveNotesPlugin} = require('deckdeckgo-webpack-plugins');
 
 const {GenerateSW} = require('workbox-webpack-plugin');
 
@@ -45,8 +42,7 @@ const plugins = [
         {from: 'src/assets/', to: 'assets'},
         {from: 'src/manifest.json', to: ''},
         {from: 'src/robots.txt', to: ''}
-    ]),
-    new ProgressBarPlugin()
+    ])
 ];
 
 module.exports = (env, argv) => {
@@ -59,11 +55,6 @@ module.exports = (env, argv) => {
         plugins.push(new GenerateSW({
             ignoreURLParametersMatching: [/./]
         }));
-        plugins.push(new DeckDeckGoInfoPlugin());
-
-        if (!argv.notes) {
-            plugins.push(new DeckDeckGoRemoveNotesPlugin());
-        }
     }
 
     config.plugins = plugins;
