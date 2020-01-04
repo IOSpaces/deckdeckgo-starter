@@ -37,39 +37,40 @@ import { defineCustomElements as deckDeckGoElements } from '@deckdeckgo/core/dis
 import {defineCustomElements as deckDeckGoSlideTitleElements } from '@deckdeckgo/slide-title/dist/loader';
 import {defineCustomElements as deckDeckGoSlideContentElements } from '@deckdeckgo/slide-content/dist/loader';
 import {defineCustomElements as deckDeckGoSlideAuthorElements } from '@deckdeckgo/slide-author/dist/loader';
+import {defineCustomElements as deckDeckGoSlideChartElements } from '@deckdeckgo/slide-chart/dist/loader';
 import {defineCustomElements as deckDeckGoSlideYoutubeElements } from '@deckdeckgo/slide-youtube/dist/loader';
 import {defineCustomElements as deckDeckGoSlideSplitElements } from '@deckdeckgo/slide-split/dist/loader';
 import {defineCustomElements as deckDeckGoSlideGifElements } from '@deckdeckgo/slide-gif/dist/loader';
 import {defineCustomElements as deckDeckGoSlideQRCodeElements } from '@deckdeckgo/slide-qrcode/dist/loader';
-import {defineCustomElements as deckDeckGoSlideChartElements } from '@deckdeckgo/slide-chart/dist/loader';
 import {defineCustomElements as deckDeckGoSlidePollElements } from '@deckdeckgo/slide-poll/dist/loader';
 
 import { defineCustomElements as deckDeckGoRemoteElements } from '@deckdeckgo/remote/dist/loader';
-
+import { defineCustomElements as deckDeckGoChartsElements } from '@deckdeckgo/charts/dist/loader';
 import { defineCustomElements as deckDeckGoQRCodeElements } from '@deckdeckgo/qrcode/dist/loader';
 import { defineCustomElements as deckDeckGoHighlightCodeElements } from '@deckdeckgo/highlight-code/dist/loader';
 import { defineCustomElements as deckDeckGoLazyImgElements } from '@deckdeckgo/lazy-img/dist/loader';
-import { defineCustomElements as deckDeckGoChartsElements } from '@deckdeckgo/charts/dist/loader';
+import { defineCustomElements as deckDeckGoSocialElements } from '@deckdeckgo/social/dist/loader';
 
 // Init web-social-share
 import { defineCustomElements as webSocialShareElements } from 'web-social-share/dist/loader';
 
 deckDeckGoElements(window).then(async () => {
+    await deckDeckGoChartsElements(window);
     await deckDeckGoQRCodeElements(window);
     await deckDeckGoHighlightCodeElements(window);
     await deckDeckGoLazyImgElements(window);
-    await deckDeckGoChartsElements(window);
+    await deckDeckGoSocialElements(window);
 
     const promises = [];
 
     promises.push(deckDeckGoSlideTitleElements(window));
     promises.push(deckDeckGoSlideContentElements(window));
     promises.push(deckDeckGoSlideAuthorElements(window));
+    promises.push(deckDeckGoSlideChartElements(window));
     promises.push(deckDeckGoSlideYoutubeElements(window));
     promises.push(deckDeckGoSlideSplitElements(window));
     promises.push(deckDeckGoSlideGifElements(window));
     promises.push(deckDeckGoSlideQRCodeElements(window));
-    promises.push(deckDeckGoSlideChartElements(window));
     promises.push(deckDeckGoSlidePollElements(window));
 
     await Promise.all(promises);
