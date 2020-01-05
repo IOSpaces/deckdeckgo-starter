@@ -75,7 +75,7 @@ disconnectRemoteControl = () => {
 
 initRemote = async () => {
     return new Promise(async (resolve) => {
-        if (process.env.NO_REMOTE) {
+        if (process.env.NO_REMOTE || EMBEDDED) {
             resolve();
             return;
         }

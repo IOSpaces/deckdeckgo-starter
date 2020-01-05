@@ -6,6 +6,7 @@ postLoading = () => {
         }
 
         await initSreenshot();
+        await initEmbedMode();
 
         resolve();
     });
@@ -36,6 +37,27 @@ function initSreenshot() {
                 if (actions) {
                     actions.style.display = 'none';
                 }
+            }
+        }
+
+        resolve();
+    });
+}
+
+function initEmbedMode() {
+    return new Promise((resolve) => {
+        initEmbedded();
+
+        if (EMBEDDED) {
+            const slidePicker = document.querySelector('#slidePicker');
+
+            if (slidePicker) {
+                slidePicker.style.display = 'none';
+            }
+
+            const deck = document.querySelector('deckgo-deck');
+            if (deck) {
+                deck.style.setProperty('--pager-display', 'none');
             }
         }
 
