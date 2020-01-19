@@ -5,12 +5,33 @@ postLoading = () => {
             app.classList.remove('loading');
         }
 
+        await initButtons();
         await initSreenshot();
         await initEmbedMode();
 
         resolve();
     });
 };
+
+function initButtons() {
+    return new Promise((resolve) => {
+        if (!document) {
+            resolve();
+            return;
+        }
+
+        document.getElementById('play').addEventListener('click', playPause('play', true));
+        document.getElementById('pause').addEventListener('click', playPause('pause', true));
+        document.getElementById('previous').addEventListener('click', previousSlide);
+        document.getElementById('next').addEventListener('click', nextSlide);
+        document.getElementById('slidePicker').addEventListener('click', presentSlidePicker);
+        document.getElementById('toggleFulScreen').addEventListener('click', toggleFullScreen);
+
+        document.getElementById('actions').addEventListener('click', openMenu(event));
+
+        resolve();
+    });
+}
 
 function initSreenshot() {
     return new Promise((resolve) => {
