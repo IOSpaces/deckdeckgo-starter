@@ -76,7 +76,7 @@ module.exports = (env, argv) => {
                     },
                 }
             },{
-                urlPattern: /^https:\/\/fonts\.googleapis\.com/,
+                urlPattern: new RegExp(/^https:\/\/fonts\.googleapis\.com/),
                 handler: 'StaleWhileRevalidate',
                 options: {
                     cacheName: 'google-fonts-stylesheets'
@@ -84,7 +84,7 @@ module.exports = (env, argv) => {
             },{
 
             },{
-                urlPattern: /^https:\/\/fonts\.gstatic\.com/,
+                urlPattern: new RegExp(/^https:\/\/fonts\.gstatic\.com/),
                 handler: 'CacheFirst',
                 options: {
                     cacheName: 'google-fonts-stylesheets',
