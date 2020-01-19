@@ -26,7 +26,7 @@ function initButtons() {
             document.getElementById('previous').addEventListener('click', previousSlide);
             document.getElementById('next').addEventListener('click', nextSlide);
             document.getElementById('slidePicker').addEventListener('click', presentSlidePicker);
-            document.getElementById('toggleFullScreen').addEventListener('click', toggleFullScreen);
+            document.getElementById('fullScreen').addEventListener('click', toggleFullScreen);
         }, {once: true});
 
         const deck = document.getElementById('slider');
