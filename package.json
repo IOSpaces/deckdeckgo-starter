@@ -10,8 +10,7 @@
     "watch": "webpack --watch --mode development",
     "watch-no-remote": "webpack --watch --mode development --env.no-remote=true",
     "build": "webpack --mode production",
-    "local": "concurrently --kill-others \"webpack --watch --mode development --env.local=true\" \"npm run dev\"",
-    "postbuild": "./scripts/config.index.js"
+    "local": "concurrently --kill-others \"webpack --watch --mode development --env.local=true\" \"npm run dev\""
   },
   "author": {
     "name": "David Dal Busco",
