@@ -37,8 +37,14 @@ function initButtons() {
         }
 
         deck.addEventListener('slidesDidLoad', async () => {
-            document.getElementsByClassName('actions').addEventListener('click', ($event) => openMenu($event));
-        }, {once: true});
+            const elements = document.getElementsByClassName('actions');
+
+            if (elements) {
+                Array.from(elements).forEach((element) => {
+                    element.addEventListener('click', ($event) => openMenu($event));
+                });
+            }
+        });
 
         resolve();
     });
