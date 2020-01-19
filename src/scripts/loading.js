@@ -36,7 +36,7 @@ function initButtons() {
             return;
         }
 
-        deck.addEventListener('slidesDidLoad', async ($event) => {
+        deck.addEventListener('slidesDidLoad', async () => {
             document.getElementsByClassName('actions').addEventListener('click', ($event) => openMenu($event));
         }, {once: true});
 
