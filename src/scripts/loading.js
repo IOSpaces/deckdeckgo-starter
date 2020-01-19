@@ -26,9 +26,18 @@ function initButtons() {
             document.getElementById('previous').addEventListener('click', previousSlide);
             document.getElementById('next').addEventListener('click', nextSlide);
             document.getElementById('slidePicker').addEventListener('click', presentSlidePicker);
-            document.getElementById('toggleFulScreen').addEventListener('click', toggleFullScreen);
+            document.getElementById('toggleFullScreen').addEventListener('click', toggleFullScreen);
+        }, {once: true});
 
-            document.getElementById('actions').addEventListener('click', openMenu(event));
+        const deck = document.getElementById('slider');
+
+        if (!deck) {
+            resolve();
+            return;
+        }
+
+        deck.addEventListener('slidesDidLoad', async ($event) => {
+            document.getElementsByClassName('actions').addEventListener('click', ($event) => openMenu($event));
         }, {once: true});
 
         resolve();
