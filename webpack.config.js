@@ -82,8 +82,6 @@ module.exports = (env, argv) => {
                     cacheName: 'google-fonts-stylesheets'
                 }
             },{
-
-            },{
                 urlPattern: new RegExp(/^https:\/\/fonts\.gstatic\.com/),
                 handler: 'CacheFirst',
                 options: {
