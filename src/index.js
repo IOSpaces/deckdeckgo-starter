@@ -17,6 +17,7 @@ import '../node_modules/@deckdeckgo/deck-utils/styles/deckdeckgo-deck-rtl.css';
 import '@webcomponents/custom-elements';
 
 import './scripts/embedded.js';
+import './scripts/buttons.js';
 import './scripts/loading.js';
 import './scripts/slider.js';
 import './scripts/sliderJumpTo.js';
@@ -88,3 +89,5 @@ deckDeckGoElements(window).then(async () => {
         await initRemote();
     });
 });
+
+initButtons();

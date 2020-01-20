@@ -5,50 +5,12 @@ postLoading = () => {
             app.classList.remove('loading');
         }
 
-        await initButtons();
         await initSreenshot();
         await initEmbedMode();
 
         resolve();
     });
 };
-
-function initButtons() {
-    return new Promise((resolve) => {
-        if (!document) {
-            resolve();
-            return;
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('play').addEventListener('click', playPause('play', true));
-            document.getElementById('pause').addEventListener('click', playPause('pause', true));
-            document.getElementById('previous').addEventListener('click', previousSlide);
-            document.getElementById('next').addEventListener('click', nextSlide);
-            document.getElementById('slidePicker').addEventListener('click', presentSlidePicker);
-            document.getElementById('fullScreen').addEventListener('click', toggleFullScreen);
-        }, {once: true});
-
-        const deck = document.getElementById('slider');
-
-        if (!deck) {
-            resolve();
-            return;
-        }
-
-        deck.addEventListener('slidesDidLoad', async () => {
-            const elements = document.getElementsByClassName('actions');
-
-            if (elements) {
-                Array.from(elements).forEach((element) => {
-                    element.addEventListener('click', ($event) => openMenu($event));
-                });
-            }
-        });
-
-        resolve();
-    });
-}
 
 function initSreenshot() {
     return new Promise((resolve) => {
