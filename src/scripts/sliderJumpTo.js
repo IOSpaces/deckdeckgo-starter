@@ -7,7 +7,7 @@ class SlidesList extends HTMLElement {
 
         const slidesListActions = await buildSlidesListActions();
 
-        this.innerHTML = '<ion-content><ion-list><ion-list-header>Jump to slide</ion-list-header>' + slidesListActions + '</ion-list></ion-content>';
+        this.innerHTML = '<ion-list><ion-list-header>Jump to slide</ion-list-header>' + slidesListActions + '</ion-list>';
     }
 }
 
@@ -24,7 +24,7 @@ buildSlidesListActions = () => {
                 if (slide.tagName && slide.tagName.toLowerCase().indexOf('deckgo-slide') > -1) {
                     const text = getSlideTitle(slide, i);
 
-                    result += '<ion-item ion-item button onclick="jumpToSlide(' + i + ')" color="primary"><ion-label>' + text + '</ion-label></ion-item>';
+                    result += '<ion-item ion-item button color="primary"><ion-label>' + text + '</ion-label></ion-item>';
 
                     i++;
                 }
@@ -82,5 +82,27 @@ presentSlidePicker = async () => {
         translucent: true
     });
 
-    return await popover.present();
+    await popover.present();
+
+    await bindSlidesListActions();
+};
+
+
+bindSlidesListActions = () => {
+    return new Promise(async (resolve) => {
+        if (!document) {
+            resolve();
+            return;
+        }
+
+        const items = document.querySelectorAll('slides-list ion-item.ion-activatable');
+
+        if (items) {
+            items.forEach((item, index) => {
+                item.addEventListener('click', async () => await jumpToSlide(index), true);
+            });
+        }
+
+        resolve();
+    });
 };
