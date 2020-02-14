@@ -81,7 +81,6 @@ presentSlidePicker = async () => {
     await bindSlidesListActions();
 };
 
-
 bindSlidesListActions = () => {
     return new Promise(async (resolve) => {
         if (!document) {
