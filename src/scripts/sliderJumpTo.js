@@ -69,20 +69,14 @@ jumpToSlide = async (index) => {
 customElements.define('slides-list', SlidesList);
 
 presentSlidePicker = async () => {
-    const popoverController = document.querySelector('ion-popover-controller');
+    const popover = document.createElement('ion-popover');
+    popover.component = 'slides-list';
+    popover.translucent = true;
+    popover.cssClass = 'menu';
 
-    if (!popoverController) {
-        return;
-    }
+    document.body.appendChild(popover);
 
-    await popoverController.componentOnReady();
-
-    const popover = await popoverController.create({
-        component: 'slides-list',
-        translucent: true
-    });
-
-    await popover.present();
+    return await popover.present();
 
     await bindSlidesListActions();
 };

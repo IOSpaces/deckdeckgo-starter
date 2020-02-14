@@ -32,26 +32,19 @@ customElements.define('menu-list', MenuList);
 openMenu = async (ev) => {
     ev.preventDefault();
 
-    const popoverController = document.querySelector('ion-popover-controller');
+    const popover = document.createElement('ion-popover');
+    popover.component = 'menu-list';
+    popover.translucent = true;
+    popover.event = ev;
 
-    if (!popoverController) {
-        return;
-    }
-
-    await popoverController.componentOnReady();
-
-    const popover = await popoverController.create({
-        component: 'menu-list',
-        translucent: true,
-        event: ev
-    });
+    document.body.appendChild(popover);
 
     await popover.present();
 };
 
 openLink = async (link) => {
     window.open(link, '_blank');
-    await document.querySelector('ion-popover-controller').dismiss();
+    await document.querySelector('ion-popover').dismiss();
 };
 
 
@@ -62,7 +55,7 @@ openShare = async () => {
         await shareDesktop();
     }
 
-    await document.querySelector('ion-popover-controller').dismiss();
+    await document.querySelector('ion-popover').dismiss();
 };
 
 function shareMobile() {
@@ -106,6 +99,10 @@ function shareDesktop() {
                 }
             }, {
                 whatsapp: {
+                    socialShareUrl: shareUrl
+                }
+            },{
+                hackernews: {
                     socialShareUrl: shareUrl
                 }
             }]
