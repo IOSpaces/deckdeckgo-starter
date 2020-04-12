@@ -1,6 +1,9 @@
-remoteEvent = async (event) => {
+window.pendingRemoteRequests = [];
+window.remoteState = 0;
+
+remoteEvent = async ($event) => {
     return new Promise(async (resolve) => {
-        if (!event || !event.detail) {
+        if (!$event || !$event.detail) {
             resolve();
             return;
         }
@@ -12,28 +15,42 @@ remoteEvent = async (event) => {
             return;
         }
 
-        const type = event.detail.type;
+        const type = $event.detail.type;
 
         if (type === 'next_slide') {
-            const slideAnimation = event.detail.slideAnimation;
+            const slideAnimation = $event.detail.slideAnimation;
             await slider.slideNext(slideAnimation, false);
             await initActionPlayPause(slider);
         } else if (type === 'prev_slide') {
-            const slideAnimation = event.detail.slideAnimation;
+            const slideAnimation = $event.detail.slideAnimation;
             await slider.slidePrev(slideAnimation, false);
             await initActionPlayPause(slider);
         } else if (type === 'slide_action') {
-            await slidePlayPause(event);
+            await slidePlayPause($event);
         } else if (type === 'slide_to') {
-            const index = event.detail.index;
+            const index = $event.detail.index;
             if (index >= 0) {
                 await slider.slideTo(index, 0);
                 await initActionPlayPause(slider);
             }
+        } else if (type === 'deck_request') {
+            await openRemoteToGrantAccess($event.detail);
         }
 
         resolve();
     });
+};
+
+openRemoteToGrantAccess = async (fromClient) => {
+    const buttonPopover = document.querySelector('#remote');
+
+    if (!buttonPopover) {
+        return;
+    }
+
+    pendingRemoteRequests.push(fromClient);
+
+    buttonPopover.click();
 };
 
 reconnectRemoteControl = () => {
@@ -87,8 +104,12 @@ initRemote = async () => {
             return;
         }
 
-        deckgoRemoteElement.addEventListener('event', async event => {
-            await remoteEvent(event)
+        deckgoRemoteElement.addEventListener('event', async $event => {
+            await remoteEvent($event);
+        });
+
+        deckgoRemoteElement.addEventListener('state', async $event => {
+            window.remoteState = $event ? $event.detail : 0;
         });
 
         window.addEventListener('resize', async () => {
@@ -141,7 +162,7 @@ function initRemoteRoomServer($event) {
         }
 
         // SIGNALING_SERVER is declared by Webpack, see webpack.config.js
-        deckgoRemoteElement.server = process.env.SIGNALING_SERVER;
+        deckgoRemoteElement.socketUrl = process.env.SIGNALING_SERVER;
 
         resolve();
     });

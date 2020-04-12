@@ -7,7 +7,7 @@ class MenuList extends HTMLElement {
 
         const menuListActions = await buildMenuListActions();
 
-        this.innerHTML = '<ion-content><ion-list no-margin>' + menuListActions + '</ion-list></ion-content>';
+        this.innerHTML = '<ion-list no-margin>' + menuListActions + '</ion-list>';
     }
 }
 
@@ -16,9 +16,7 @@ buildMenuListActions = () => {
         let result = '';
 
         if (!EMBEDDED) {
-            result += '<ion-item ion-item button detail="false" onclick="displaySlideNotes()" color="primary" style="--border-style: none;"><ion-icon src="https://deckdeckgo.com/assets/icons/ionicons/clipboard.svg" aria-label="Display slide notes" slot="end"></ion-icon><ion-label>Display slide notes</ion-label></ion-item>';
-            result += '<ion-item ion-item button detail="false" onclick="displayRemoteControl()" color="primary" style="--border-style: none;"><ion-icon src="https://deckdeckgo.com/assets/icons/ionicons/phone-portrait.svg" aria-label="Remote control" slot="end"></ion-icon><ion-label>Remote control</ion-label></ion-item>';
-        }
+            result += '<ion-item ion-item button detail="false" onclick="displaySlideNotes()" color="primary" style="--border-style: none;"><ion-icon src="https://deckdeckgo.com/assets/icons/ionicons/clipboard.svg" aria-label="Display slide notes" slot="end"></ion-icon><ion-label>Display slide notes</ion-label></ion-item>';}
 
         result += '<ion-item ion-item button detail="false" onclick="openShare()" color="primary" style="--border-style: none;"><ion-icon src="https://deckdeckgo.com/assets/icons/ionicons/share.svg" aria-label="Share this presentation" slot="end"></ion-icon><ion-label>Share</ion-label></ion-item>';
         result += '<ion-item ion-item button detail="false" onclick="openLink(\'https://deckdeckgo.com\')" style="--border-style: none; --ion-item-background: white;"><ion-icon src="https://deckdeckgo.com/assets/icons/deckdeckgo.svg" aria-label="DeckDeckGo" slot="end"></ion-icon><ion-label>Created with DeckDeckGo</ion-label></ion-item>';
@@ -29,13 +27,15 @@ buildMenuListActions = () => {
 
 customElements.define('menu-list', MenuList);
 
-openMenu = async (ev) => {
-    ev.preventDefault();
+openMenu = async ($event) => {
+    $event.preventDefault();
 
     const popover = document.createElement('ion-popover');
     popover.component = 'menu-list';
     popover.translucent = true;
-    popover.event = ev;
+    popover.event = $event;
+    popover.mode = 'ios';
+    popover.cssClass = 'options';
 
     document.body.appendChild(popover);
 
