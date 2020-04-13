@@ -62,7 +62,7 @@ import { defineCustomElements as webSocialShareElements } from 'web-social-share
 deckDeckGoElements().then(async () => {
     await deckDeckGoChartsElements();
     await deckDeckGoQRCodeElements();
-    await deckDeckGoHighlightCodeElements(window);
+    await deckDeckGoHighlightCodeElements();
     await deckDeckGoLazyImgElements();
     await deckDeckGoSocialElements();
     await deckDeckGoYoutubeElements();
