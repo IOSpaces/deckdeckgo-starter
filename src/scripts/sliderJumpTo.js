@@ -76,7 +76,7 @@ presentSlidePicker = async () => {
 
     document.body.appendChild(popover);
 
-    return await popover.present();
+    await popover.present();
 
     await bindSlidesListActions();
 };
