@@ -63,7 +63,7 @@ function getSlideTitle(slide, index) {
 
 jumpToSlide = async (index) => {
     await document.getElementById('slider').slideTo(index, 0);
-    await document.querySelector('ion-popover-controller').dismiss();
+    await document.querySelector('ion-popover').dismiss();
 };
 
 customElements.define('slides-list', SlidesList);
