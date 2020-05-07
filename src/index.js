@@ -54,6 +54,7 @@ import { defineCustomElements as deckDeckGoLazyImgElements } from '@deckdeckgo/l
 import { defineCustomElements as deckDeckGoSocialElements } from '@deckdeckgo/social/dist/loader';
 import { defineCustomElements as deckDeckGoYoutubeElements } from '@deckdeckgo/youtube/dist/loader';
 import { defineCustomElements as deckDeckGoDragResizeRotateElements } from '@deckdeckgo/drag-resize-rotate/dist/loader';
+import { defineCustomElements as deckDeckGoDemoElements } from '@deckdeckgo/demo/dist/loader';
 
 // Init web-social-share
 import { defineCustomElements as webSocialShareElements } from 'web-social-share/dist/loader';
@@ -66,6 +67,7 @@ deckDeckGoElements().then(async () => {
     await deckDeckGoSocialElements();
     await deckDeckGoYoutubeElements();
     await deckDeckGoDragResizeRotateElements();
+    await deckDeckGoDemoElements();
 
     const promises = [];
 
