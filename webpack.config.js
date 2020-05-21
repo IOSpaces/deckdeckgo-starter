@@ -38,11 +38,13 @@ const plugins = [
         path: path.join(__dirname, '../dist/'),
         filename: 'index.html'
     }),
-    new CopyWebpackPlugin([
-        {from: 'src/assets/', to: 'assets'},
-        {from: 'src/manifest.json', to: ''},
-        {from: 'src/robots.txt', to: ''}
-    ])
+    new CopyWebpackPlugin({
+        patterns: [
+            {from: 'src/assets/', to: 'assets'},
+            {from: 'src/manifest.json', to: ''},
+            {from: 'src/robots.txt', to: ''}
+        ]
+    })
 ];
 
 module.exports = (env, argv) => {
