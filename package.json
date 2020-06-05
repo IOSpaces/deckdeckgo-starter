@@ -1,6 +1,6 @@
 {
   "name": "deckdeckgo-starter",
-  "version": "2.4.1",
+  "version": "2.5.0",
   "description": "The Progressive Web App alternative for simple presentations",
   "homepage": "https://deckdeckgo.com",
   "scripts": {
@@ -24,7 +24,7 @@
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
     "concurrently": "^5.2.0",
-    "copy-webpack-plugin": "^6.0.1",
+    "copy-webpack-plugin": "^6.0.2",
     "css-loader": "^3.5.3",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
@@ -51,6 +51,7 @@
     "@deckdeckgo/slide-chart": "^1.0.1",
     "@deckdeckgo/slide-content": "^1.0.1",
     "@deckdeckgo/slide-gif": "^1.0.1",
+    "@deckdeckgo/slide-playground": "^1.0.1",
     "@deckdeckgo/slide-poll": "^1.0.1",
     "@deckdeckgo/slide-qrcode": "^1.0.3",
     "@deckdeckgo/slide-split": "^1.1.4",
