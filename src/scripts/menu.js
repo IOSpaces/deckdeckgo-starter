@@ -16,10 +16,11 @@ buildMenuListActions = () => {
         let result = '';
 
         if (!EMBEDDED) {
-            result += '<ion-item ion-item button detail="false" onclick="displaySlideNotes()" color="primary" style="--border-style: none;"><ion-icon src="https://deckdeckgo.com/assets/icons/ionicons/clipboard.svg" aria-label="Display slide notes" slot="end"></ion-icon><ion-label>Display slide notes</ion-label></ion-item>';}
+            result += '<ion-item ion-item button detail="false" id="notes" color="primary" style="--border-style: none;"><ion-icon src="https://deckdeckgo.com/assets/icons/ionicons/clipboard.svg" aria-label="Display slide notes" slot="end"></ion-icon><ion-label>Display slide notes</ion-label></ion-item>';
+        }
 
-        result += '<ion-item ion-item button detail="false" onclick="openShare()" color="primary" style="--border-style: none;"><ion-icon src="https://deckdeckgo.com/assets/icons/ionicons/share.svg" aria-label="Share this presentation" slot="end"></ion-icon><ion-label>Share</ion-label></ion-item>';
-        result += '<ion-item ion-item button detail="false" onclick="openLink(\'https://deckdeckgo.com\')" style="--border-style: none; --ion-item-background: white;"><ion-icon src="https://deckdeckgo.com/assets/icons/deckdeckgo.svg" aria-label="DeckDeckGo" slot="end"></ion-icon><ion-label>Created with DeckDeckGo</ion-label></ion-item>';
+        result += '<ion-item ion-item button detail="false" id="share" color="primary" style="--border-style: none;"><ion-icon src="https://deckdeckgo.com/assets/icons/ionicons/share.svg" aria-label="Share this presentation" slot="end"></ion-icon><ion-label>Share</ion-label></ion-item>';
+        result += '<ion-item ion-item button detail="false" id="made" style="--border-style: none; --ion-item-background: white;"><ion-icon src="https://deckdeckgo.com/assets/icons/deckdeckgo.svg" aria-label="DeckDeckGo" slot="end"></ion-icon><ion-label>Made with DeckDeckGo</ion-label></ion-item>';
 
         resolve(result);
     });
@@ -40,6 +41,18 @@ openMenu = async ($event) => {
     document.body.appendChild(popover);
 
     await popover.present();
+
+    // attach events
+    const buttonNotes = document.querySelector('ion-popover #notes');
+    buttonNotes.addEventListener('click', displaySlideNotes);
+
+    const buttonShare = document.querySelector('ion-popover #share');
+    buttonShare.addEventListener('click', openShare);
+
+    const buttonMade = document.querySelector('ion-popover #made');
+    buttonMade.addEventListener('click', async () => {
+        await openLink('https://deckdeckgo.com');
+    });
 };
 
 openLink = async (link) => {
